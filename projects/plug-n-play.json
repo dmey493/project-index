@@ -1,0 +1,38 @@
+{
+  "name": "Plug N Play",
+  "slug": "plug-n-play",
+  "bucket": "education",
+  "status": "active",
+  "one_liner": "A gated web platform of plug-and-play teaching tools for middle-school (grades 6–8) teachers — a tagged, unit-first task library plus the Struggle Bus math-worksheet generator, with ELA and Science on the way.",
+  "live_url": "",
+  "repo_url": "",
+  "local_path": "C:\\Users\\meyedl01\\PlugNPlay",
+  "stack": ["Next.js 16", "React 19", "TypeScript", "Tailwind v4", "Three.js / R3F", "matter-js", "Python (Struggle Bus engine)"],
+  "last_touched": "2026-06-24",
+  "left_off": "Bold & playful homepage redesign landed (playground-hero, slim chrome, completed gray ramp); ELA and Science set to coming-soon pages.",
+  "next": "Bring the inner pages up to the new design system.",
+  "screenshot": "assets/plug-n-play/cover.png",
+  "components": [
+    {
+      "name": "Task Library",
+      "status": "active",
+      "one_liner": "Tagged, unit-first browse of rich tasks, thin slices, and teaching strategies, with favorites and one-click projection."
+    },
+    {
+      "name": "Struggle Bus (Math Generator)",
+      "status": "live",
+      "one_liner": "~10,000-question math worksheet generator (Exit Ticket, Mild/Medium/Spicy, Proficiency Set), powered by a deployed Python rendering engine."
+    },
+    {
+      "name": "Whiteboard",
+      "status": "active",
+      "one_liner": "Freeform interactive whiteboard for live, projected lessons."
+    },
+    {
+      "name": "Groups",
+      "status": "active",
+      "one_liner": "Quick student grouping tool for organizing the room on the fly."
+    }
+  ],
+  "updated_at": "2026-06-24"
+}

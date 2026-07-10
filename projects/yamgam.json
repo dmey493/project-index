@@ -1,0 +1,64 @@
+{
+  "name": "yamgam",
+  "slug": "yamgam",
+  "bucket": "education",
+  "status": "active",
+  "one_liner": "A hub of ten single-file browser math games for middle schoolers, disguised as pure games — no accounts, no installs, no visible schoolwork.",
+  "local_path": "C:\\Users\\meyedl01\\OneDrive - Fort Wayne Community Schools\\Desktop\\yamgam",
+  "stack": ["HTML", "CSS", "JavaScript", "single-file, no build step"],
+  "last_touched": "2026-07-10",
+  "next": "Publish the hub somewhere students can reach it",
+  "components": [
+    {
+      "name": "Between",
+      "one_liner": "Daily puzzle: fit a fraction between two numbers, five rounds deep — rational density in disguise.",
+      "status": "shipped"
+    },
+    {
+      "name": "Estimation Golf",
+      "one_liner": "9-hole golf where the clubs are operations (×9, +47, ×½, ²) — operational number sense.",
+      "status": "shipped"
+    },
+    {
+      "name": "Zoom",
+      "one_liner": "Infinite-zoom number line dive — place value, decimals, and irrational bosses.",
+      "status": "shipped"
+    },
+    {
+      "name": "Sonar",
+      "one_liner": "Ping spatially, fire by typed coordinates — four-quadrant graphing as a ship hunt.",
+      "status": "shipped"
+    },
+    {
+      "name": "The Chocolate Shop",
+      "one_liner": "Slice-by-eye fractions tycoon in Grandma Pearl's chocolate shop.",
+      "status": "shipped"
+    },
+    {
+      "name": "The Ramen Cat",
+      "one_liner": "Ratio-and-percent ramen counter with Tonko the talking cat — recipes are ratio tables.",
+      "status": "shipped"
+    },
+    {
+      "name": "Blind Builder",
+      "one_liner": "Asymmetric co-op: one sees the blueprint, one builds, messages go by pigeon — precise communication under a word budget.",
+      "status": "shipped"
+    },
+    {
+      "name": "Rewind",
+      "one_liner": "Evidence-based sequencing mystery — read the scene backwards, stamp the true order of events.",
+      "status": "shipped"
+    },
+    {
+      "name": "Family Tree Detective",
+      "one_liner": "Cozy deduction campaign — rebuild families from letters and ledgers; transitive inference in a records office.",
+      "status": "shipped"
+    },
+    {
+      "name": "The Cartographer's Apprentice",
+      "one_liner": "Turn travelers' spoken 'on my left' testimony into a top-down map — perspective-taking and spatial orientation.",
+      "status": "shipped"
+    }
+  ],
+  "updated_at": "2026-07-10"
+}

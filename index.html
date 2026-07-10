@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en" style="--accent: #0d9488">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dave&#x27;s Projects</title>
+<meta name="description" content="Classroom tools and other things I build for teachers.">
+<style>
+:root {
+  --accent: #4f46e5;
+  --bg: #fbfbfd; --surface: #ffffff; --text: #1a1a1f; --muted: #6b7280;
+  --line: #e7e7ec; --tag-bg: #f1f1f5; --radius: 14px;
+  --maxw: 1120px; --shadow: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.05);
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d0d12; --surface: #16161d; --text: #ececf1; --muted: #9a9aa6;
+    --line: #26262f; --tag-bg: #20202a;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.4);
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font-family: var(--font); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+header.site { border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 6%, var(--bg)), var(--bg)); }
+.site-inner { padding: 56px 24px 40px; max-width: var(--maxw); margin: 0 auto; }
+.eyebrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--accent); font-weight: 700; margin: 0 0 10px; }
+h1 { margin: 0; font-size: clamp(28px, 5vw, 44px); letter-spacing: -.02em; }
+.tagline { margin: 12px 0 0; color: var(--muted); font-size: 18px; max-width: 60ch; }
+.header-links { margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
+.hl { text-decoration: none; font-size: 14px; font-weight: 600; padding: 7px 14px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+.hl:hover { border-color: var(--accent); }
+.stat { margin-top: 20px; font-size: 13px; color: var(--muted); }
+
+nav.jump { position: sticky; top: 0; z-index: 5;
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter: saturate(180%) blur(8px); border-bottom: 1px solid var(--line); }
+nav.jump .wrap { display: flex; gap: 4px; padding: 10px 24px; }
+nav.jump a { text-decoration: none; font-size: 14px; font-weight: 600; color: var(--muted);
+  padding: 6px 12px; border-radius: 8px; }
+nav.jump a:hover { color: var(--text); background: var(--tag-bg); }
+
+main { padding: 40px 0 72px; }
+.bucket { margin-bottom: 52px; scroll-margin-top: 64px; }
+.bucket-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 22px; }
+.bucket-head h2 { margin: 0; font-size: 22px; letter-spacing: -.01em; }
+.count { font-size: 13px; color: var(--muted); background: var(--tag-bg);
+  padding: 2px 10px; border-radius: 999px; font-weight: 600; }
+
+.grid { display: grid; gap: 22px; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+.empty { color: var(--muted); font-style: italic; padding: 28px;
+  border: 1px dashed var(--line); border-radius: var(--radius); text-align: center; }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column;
+  transition: transform .15s ease, border-color .15s ease; }
+.card:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--accent) 40%, var(--line)); }
+.thumb-wrap { display: block; aspect-ratio: 16 / 9; background: var(--tag-bg); overflow: hidden; }
+.thumb { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card-body { padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.card-top { display: flex; }
+.card-title { margin: 0; font-size: 19px; letter-spacing: -.01em; }
+.one-liner { margin: 0; color: var(--muted); }
+
+.pill { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 600;
+  color: var(--text); background: var(--tag-bg); padding: 4px 11px; border-radius: 999px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+
+.links { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn { text-decoration: none; font-size: 13.5px; font-weight: 600; padding: 8px 14px;
+  border-radius: 9px; border: 1px solid var(--line); background: var(--surface); }
+.btn:hover { border-color: var(--accent); }
+.btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-primary:hover { filter: brightness(1.07); }
+
+.meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.tag { font-size: 11.5px; color: var(--muted); background: var(--tag-bg); padding: 3px 9px; border-radius: 6px; }
+.touched { font-size: 11.5px; color: var(--muted); margin-left: 2px; }
+
+.progress { margin: 2px 0 0; padding: 12px 14px; border-radius: 10px; background: var(--tag-bg);
+  display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 13.5px; }
+.progress dt { font-weight: 700; color: var(--text); }
+.progress dd { margin: 0; color: var(--muted); }
+
+.inside { border-top: 1px solid var(--line); padding-top: 12px; }
+.inside summary { cursor: pointer; font-weight: 600; font-size: 14px; }
+.comps { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.comp { padding-left: 12px; border-left: 2px solid var(--line); }
+.comp-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.comp-name { font-weight: 600; font-size: 14px; }
+.comp-desc { margin: 3px 0 0; color: var(--muted); font-size: 13px; }
+.mini { font-size: 12.5px; font-weight: 600; color: var(--accent); text-decoration: none; }
+
+/* ---- Books shelf (3D carousel) ---- */
+.shelf { margin: 4px 0 8px; }
+.shelf-head { display: flex; align-items: center; justify-content: space-between; }
+.shelf-head h3 { margin: 0; font-size: 16px; color: var(--muted); font-weight: 600;
+  letter-spacing: .01em; }
+.shelf-controls { display: flex; gap: 8px; }
+.shelf-btn { width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line);
+  background: var(--surface); color: var(--text); cursor: pointer; font-size: 18px; line-height: 1;
+  display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); }
+.shelf-btn:hover { border-color: var(--accent); }
+.shelf-track { display: flex; gap: 56px; overflow-x: auto; scroll-snap-type: x mandatory;
+  padding: 40px 16px 26px; scroll-behavior: smooth; perspective: 1600px; }
+.shelf-track::-webkit-scrollbar { height: 8px; }
+.shelf-track::-webkit-scrollbar-thumb { background: var(--line); border-radius: 999px; }
+
+.book { scroll-snap-align: center; flex: 0 0 auto; width: 190px; outline: none;
+  display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.book-3d { position: relative; width: 190px; height: 280px; transform-style: preserve-3d;
+  transform: rotateY(-28deg); transition: transform .55s cubic-bezier(.2,.7,.2,1); }
+.book:hover .book-3d, .book:focus-visible .book-3d, .book:focus-within .book-3d {
+  transform: rotateY(-6deg) translateZ(12px); }
+.book-face { position: absolute; top: 0; left: 0; height: 280px; }
+.book-front { width: 190px; transform: translateZ(20px); overflow: hidden;
+  border-radius: 2px 5px 5px 2px; background: var(--tag-bg); box-shadow: 0 18px 36px rgba(0,0,0,.32); }
+.book-front img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.book-front::after { content: ""; position: absolute; inset: 0; border-radius: 2px 5px 5px 2px;
+  background: linear-gradient(90deg, rgba(0,0,0,.35) 0, rgba(0,0,0,.05) 5%, rgba(255,255,255,.16) 9%, rgba(255,255,255,0) 16%); }
+.book-front--blank { display: flex; align-items: center; justify-content: center; padding: 18px;
+  text-align: center; color: #fff; font-weight: 700; font-size: 16px;
+  background: var(--spine, #3a3a44); }
+.book-spine { width: 40px; left: 0; transform-origin: left center; transform: rotateY(-90deg);
+  border-radius: 2px 0 0 2px; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(90deg, rgba(0,0,0,.30), rgba(255,255,255,.05)), var(--spine, #3a3a44); }
+.book-spine span { writing-mode: vertical-rl; transform: rotate(180deg); color: #fff;
+  font-size: 12px; font-weight: 600; white-space: nowrap; opacity: .92; letter-spacing: .02em;
+  max-height: 248px; overflow: hidden; text-overflow: ellipsis; padding: 8px 0; }
+.book-pages { width: 40px; left: 150px; transform-origin: right center; transform: rotateY(90deg);
+  border-radius: 0 4px 4px 0;
+  background: repeating-linear-gradient(90deg, #f3f1ea, #f3f1ea 1px, #cfcabb 2px, #f3f1ea 3px); }
+.book-3d::after { content: ""; position: absolute; left: 4px; right: 4px; bottom: -24px; height: 26px;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,.32), rgba(0,0,0,0) 70%);
+  transform: rotateX(82deg); filter: blur(2px); }
+.book-info { text-align: center; width: 210px; display: flex; flex-direction: column;
+  gap: 6px; align-items: center; }
+.book-title { font-weight: 700; font-size: 15px; line-height: 1.3; }
+.book-author { color: var(--muted); font-size: 13px; }
+.book-sub { color: var(--muted); font-size: 12px; }
+.book-actions { margin-top: 4px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: center; }
+
+footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: 13px; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+  .book-3d { transform: rotateY(-20deg); }
+}
+</style>
+</head>
+<body>
+<header class="site"><div class="site-inner">
+  <p class="eyebrow">Portfolio</p>
+  <h1>Dave&#x27;s Projects</h1>
+  <p class="tagline">Classroom tools and other things I build for teachers.</p>
+  
+  <p class="stat">2 items · last updated 2026-07-10</p>
+</div></header>
+<nav class="jump"><div class="wrap"><a href="#education">Education</a><a href="#service">Service</a><a href="#personal">Personal</a></div></nav>
+<main><div class="wrap"><section id="education" class="bucket"><div class="bucket-head"><h2>Education</h2><span class="count">2</span></div><div class="grid"><article class="card"><a class="thumb-wrap" href="#"><img class="thumb" src="assets/plug-n-play/cover.png" alt="Plug N Play screenshot" loading="lazy"></a><div class="card-body"><div class="card-top"><span class="pill"><span class="dot" style="background:#d97706"></span>Active</span></div><h3 class="card-title">Plug N Play</h3><p class="one-liner">A gated web platform of plug-and-play teaching tools for middle-school (grades 6–8) teachers — a tagged, unit-first task library plus the Struggle Bus math-worksheet generator, with ELA and Science on the way.</p><div class="meta"><span class="tag">Next.js 16</span><span class="tag">React 19</span><span class="tag">TypeScript</span><span class="tag">Tailwind v4</span><span class="tag">Three.js / R3F</span><span class="tag">matter-js</span><span class="tag">Python (Struggle Bus engine)</span><span class="touched">updated 2026-06-24</span></div><dl class="progress"><dt>Left off</dt><dd>Bold &amp; playful homepage redesign landed (playground-hero, slim chrome, completed gray ramp); ELA and Science set to coming-soon pages.</dd><dt>Next</dt><dd>Bring the inner pages up to the new design system.</dd></dl><details class="inside" open><summary>Inside (4)</summary><ul class="comps"><li class="comp"><div class="comp-head"><span class="comp-name">Task Library</span><span class="pill"><span class="dot" style="background:#d97706"></span>Active</span></div><p class="comp-desc">Tagged, unit-first browse of rich tasks, thin slices, and teaching strategies, with favorites and one-click projection.</p></li><li class="comp"><div class="comp-head"><span class="comp-name">Struggle Bus (Math Generator)</span><span class="pill"><span class="dot" style="background:#16a34a"></span>Live</span></div><p class="comp-desc">~10,000-question math worksheet generator (Exit Ticket, Mild/Medium/Spicy, Proficiency Set), powered by a deployed Python rendering engine.</p></li><li class="comp"><div class="comp-head"><span class="comp-name">Whiteboard</span><span class="pill"><span class="dot" style="background:#d97706"></span>Active</span></div><p class="comp-desc">Freeform interactive whiteboard for live, projected lessons.</p></li><li class="comp"><div class="comp-head"><span class="comp-name">Groups</span><span class="pill"><span class="dot" style="background:#d97706"></span>Active</span></div><p class="comp-desc">Quick student grouping tool for organizing the room on the fly.</p></li></ul></details></div></article><article class="card"><div class="card-body"><div class="card-top"><span class="pill"><span class="dot" style="background:#d97706"></span>Active</span></div><h3 class="card-title">yamgam</h3><p class="one-liner">A hub of ten single-file browser math games for middle schoolers, disguised as pure games — no accounts, no installs, no visible schoolwork.</p><div class="meta"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">single-file, no build step</span><span class="touched">updated 2026-07-10</span></div><dl class="progress"><dt>Next</dt><dd>Publish the hub somewhere students can reach it</dd></dl><details class="inside" open><summary>Inside (10)</summary><ul class="comps"><li class="comp"><div class="comp-head"><span class="comp-name">Between</span><span class="pill"><span class="dot" style="background:#0d9488"></span>Shipped</span></div><p class="comp-desc">Daily puzzle: fit a fraction between two numbers, five rounds deep — rational density in disguise.</p></li><li class="comp"><div class="comp-head"><span class="comp-name">Estimation Golf</span><span class="pill"><span class="dot" style="background:#0d9488"></span>Shipped</span></div><p class="comp-desc">9-hole golf where the clubs are operations (×9, +47, ×½, ²) — operational number sense.</p></li><li class="comp"><div class="comp-head"><span class="comp-name">Zoom</span><span class="pill"><span class="dot" style="background:#0d9488"></span>Shipped</span></div><p class="comp-desc">Infinite-zoom number line dive — place value, decimals, and irrational bosses.</p></li><li class="comp"><div class="comp-head"><span class="comp-name">Sonar</span><span class="pill"><span class="dot" style="background:#0d9488"></span>Shipped</span></div><p class="comp-desc">Ping spatially, fire by typed coordinates — four-quadrant graphing as a ship hunt.</p></li><li class="comp"><div class="comp-head"><span class="comp-name">The Chocolate Shop</span><span class="pill"><span class="dot" style="background:#0d9488"></span>Shipped</span></div><p class="comp-desc">Slice-by-eye fractions tycoon in Grandma Pearl&#x27;s chocolate shop.</p></li><li class="comp"><div class="comp-head"><span class="comp-name">The Ramen Cat</span><span class="pill"><span class="dot" style="background:#0d9488"></span>Shipped</span></div><p class="comp-desc">Ratio-and-percent ramen counter with Tonko the talking cat — recipes are ratio tables.</p></li><li class="comp"><div class="comp-head"><span class="comp-name">Blind Builder</span><span class="pill"><span class="dot" style="background:#0d9488"></span>Shipped</span></div><p class="comp-desc">Asymmetric co-op: one sees the blueprint, one builds, messages go by pigeon — precise communication under a word budget.</p></li><li class="comp"><div class="comp-head"><span class="comp-name">Rewind</span><span class="pill"><span class="dot" style="background:#0d9488"></span>Shipped</span></div><p class="comp-desc">Evidence-based sequencing mystery — read the scene backwards, stamp the true order of events.</p></li><li class="comp"><div class="comp-head"><span class="comp-name">Family Tree Detective</span><span class="pill"><span class="dot" style="background:#0d9488"></span>Shipped</span></div><p class="comp-desc">Cozy deduction campaign — rebuild families from letters and ledgers; transitive inference in a records office.</p></li><li class="comp"><div class="comp-head"><span class="comp-name">The Cartographer&#x27;s Apprentice</span><span class="pill"><span class="dot" style="background:#0d9488"></span>Shipped</span></div><p class="comp-desc">Turn travelers&#x27; spoken &#x27;on my left&#x27; testimony into a top-down map — perspective-taking and spatial orientation.</p></li></ul></details></div></article></div></section><section id="service" class="bucket"><div class="bucket-head"><h2>Service</h2><span class="count">0</span></div><p class="empty">Nothing here yet.</p></section><section id="personal" class="bucket"><div class="bucket-head"><h2>Personal</h2><span class="count">0</span></div><p class="empty">Nothing here yet.</p></section></div></main>
+<footer><div class="wrap">Generated by the project-portfolio skill · rebuild with <code>python build.py</code></div></footer>
+<script>
+(function () {
+  document.querySelectorAll('[data-shelf]').forEach(function (shelf) {
+    var track = shelf.querySelector('.shelf-track');
+    if (!track) return;
+    function step() { return Math.max(220, Math.round(track.clientWidth * 0.7)); }
+    var prev = shelf.querySelector('.shelf-prev');
+    var next = shelf.querySelector('.shelf-next');
+    if (prev) prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    if (next) next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+  });
+})();
+</script>
+</body>
+</html>
