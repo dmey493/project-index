@@ -2,62 +2,86 @@
   "name": "yamgam",
   "slug": "yamgam",
   "bucket": "education",
-  "status": "active",
-  "one_liner": "A hub of ten single-file browser math games for middle schoolers, disguised as pure games — no accounts, no installs, no visible schoolwork.",
+  "status": "live",
+  "one_liner": "A hub of twelve single-file browser math games for middle schoolers, disguised as pure games — no accounts, no installs, no visible schoolwork.",
+  "live_url": "https://dmey493.github.io/yamgam/",
+  "repo_url": "https://github.com/dmey493/yamgam",
   "local_path": "C:\\Users\\meyedl01\\OneDrive - Fort Wayne Community Schools\\Desktop\\yamgam",
   "stack": ["HTML", "CSS", "JavaScript", "single-file, no build step"],
   "last_touched": "2026-07-10",
-  "next": "Publish the hub somewhere students can reach it",
+  "next": "Add screenshots to the portfolio cards",
   "components": [
     {
       "name": "Between",
       "one_liner": "Daily puzzle: fit a fraction between two numbers, five rounds deep — rational density in disguise.",
-      "status": "shipped"
+      "status": "live",
+      "deep_link": "https://dmey493.github.io/yamgam/Between/Between.html"
     },
     {
       "name": "Estimation Golf",
       "one_liner": "9-hole golf where the clubs are operations (×9, +47, ×½, ²) — operational number sense.",
-      "status": "shipped"
+      "status": "live",
+      "deep_link": "https://dmey493.github.io/yamgam/EstimationGolf/EstimationGolf.html"
     },
     {
       "name": "Zoom",
       "one_liner": "Infinite-zoom number line dive — place value, decimals, and irrational bosses.",
-      "status": "shipped"
+      "status": "live",
+      "deep_link": "https://dmey493.github.io/yamgam/Zoom/Zoom.html"
     },
     {
       "name": "Sonar",
       "one_liner": "Ping spatially, fire by typed coordinates — four-quadrant graphing as a ship hunt.",
-      "status": "shipped"
+      "status": "live",
+      "deep_link": "https://dmey493.github.io/yamgam/Sonar/Sonar.html"
     },
     {
       "name": "The Chocolate Shop",
       "one_liner": "Slice-by-eye fractions tycoon in Grandma Pearl's chocolate shop.",
-      "status": "shipped"
+      "status": "live",
+      "deep_link": "https://dmey493.github.io/yamgam/UnbreakableChocolateBar/UnbreakableChocolateBar.html"
     },
     {
       "name": "The Ramen Cat",
       "one_liner": "Ratio-and-percent ramen counter with Tonko the talking cat — recipes are ratio tables.",
-      "status": "shipped"
+      "status": "live",
+      "deep_link": "https://dmey493.github.io/yamgam/RamenCat/RamenCat.html"
     },
     {
       "name": "Blind Builder",
       "one_liner": "Asymmetric co-op: one sees the blueprint, one builds, messages go by pigeon — precise communication under a word budget.",
-      "status": "shipped"
+      "status": "live",
+      "deep_link": "https://dmey493.github.io/yamgam/BlindBuilder/BlindBuilder.html"
     },
     {
       "name": "Rewind",
       "one_liner": "Evidence-based sequencing mystery — read the scene backwards, stamp the true order of events.",
-      "status": "shipped"
+      "status": "live",
+      "deep_link": "https://dmey493.github.io/yamgam/Rewind/Rewind.html"
     },
     {
       "name": "Family Tree Detective",
       "one_liner": "Cozy deduction campaign — rebuild families from letters and ledgers; transitive inference in a records office.",
-      "status": "shipped"
+      "status": "live",
+      "deep_link": "https://dmey493.github.io/yamgam/FamilyTreeDetective/FamilyTreeDetective.html"
     },
     {
       "name": "The Cartographer's Apprentice",
       "one_liner": "Turn travelers' spoken 'on my left' testimony into a top-down map — perspective-taking and spatial orientation.",
-      "status": "shipped"
+      "status": "live",
+      "deep_link": "https://dmey493.github.io/yamgam/CartographersApprentice/CartographersApprentice.html"
+    },
+    {
+      "name": "Orchard Cottage",
+      "one_liner": "Endless fruit-window slicing — cut fair shares by eye, graded by true volume; the banana lies about its size.",
+      "status": "live",
+      "deep_link": "https://dmey493.github.io/yamgam/OrchardCottage/OrchardCottage.html"
+    },
+    {
+      "name": "The Gilder Trust",
+      "one_liner": "Papers-Please-style bank teller sim — scrutinize documents and catch counterfeits under time pressure.",
+      "status": "live",
+      "deep_link": "https://dmey493.github.io/yamgam/TheGilderTrust/TheGilderTrust.html"
     }
   ],
   "updated_at": "2026-07-10"
